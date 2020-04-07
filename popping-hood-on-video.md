@@ -15,9 +15,17 @@
 - Pop the hood, aka open up Chrome Developer tools (or your browser equivelant).
 
 
-Have you ever watched a video? Actually wait, thats way too large a net. Have you ever watched a video stream online? Nope, still far too many of you still here. Have you ever watched a video stream online and wanted to learn exactly how it works, from an industry expert? Thats great, well y'all should probably keep looking around for other posts. Have you ever watched a video stream online and wondered what you would see if you popped the hood and looked around a bit?
+Have you ever watched a video? Actually wow, thats a big ol' net. 
 
-Whew, well hey it looks like its just you and me now. You've come to the right place. I'm just another engineer who thought, "gee I wonder how this works" around a year ago while watching a football stream, and would be happy to walk through that ensuing investigation. I'll even throw in some cool nuggets that I've picked up since then. By the end of this quick journey I want to completely replace the black box of the player in your browser with, well, maybe a slightly lighter box (think `#1a1a1a`). But really, the world of video engineering is a really neat one if you haven't had a chance to take a trip so here is my brochure to streaming island.
+Have you ever watched a video stream online? Nope, still way too many of you here. 
+
+Have you ever watched a video stream online and wanted to learn _exactly_ how it works, and from a seasoned industry expert? Great! Well y'all should probably keep on looking around.
+
+Have you ever watched a video stream online and wondered what you might see if you popped the hood and looked around a bit?
+
+Whew, well hey it looks like its just you and me now. You've come to the right place. First off, I'm not saying I'm a mechanic, but I definitely consider myself a car person these days. I'm just another engineer who thought, "gee I wonder how this works" around a year ago while watching a football stream, and would be happy to walk through the ensuing investigation with you. I'll even throw in some cool nuggets that I've picked up since then.
+
+In fact, by the end of this little journey I will destroy the black box that is the player in your browser, and probably replace it with more of a greyish looking box (think `#1a1a1a`). But really, the world of video engineering is a really neat one if you haven't had a chance to take a trip so here is my brochure to streaming island.
 
 
 > Picture of Twitch with the developer panel open
