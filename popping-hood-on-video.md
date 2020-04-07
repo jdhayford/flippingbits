@@ -15,6 +15,11 @@
 - Pop the hood, aka open up Chrome Developer tools (or your browser equivelant).
 
 
+Have you ever watched a video? Actually wait, thats way too large a net. Have you ever watched a video stream online? Nope, still far too many of you still here. Have you ever watched a video stream online and wanted to learn exactly how it works, from an industry expert? Thats great, well y'all should probably keep looking around for other posts. Have you ever watched a video stream online and wondered what you would see if you popped the hood and looked around a bit?
+
+Whew, well hey it looks like its just you and me now. You've come to the right place. I'm just another engineer who thought, "gee I wonder how this works" around a year ago while watching a football stream, and would be happy to walk through that ensuing investigation. I'll even throw in some cool nuggets that I've picked up since then. By the end of this quick journey I want to completely replace the black box of the player in your browser with, well, maybe a slightly lighter box (think `#1a1a1a`). But really, the world of video engineering is a really neat one if you haven't had a chance to take a trip so here is my brochure to streaming island.
+
+
 > Picture of Twitch with the developer panel open
 
 Lets hop on over to the network tab to see whats going on
@@ -37,9 +42,11 @@ Ahh we notice that the file system recognizes this `.ts` file extensnion as MPEG
 
 Hey would you look at that! That looks like a piece of the video we're watching. Seems intuitive enough. So why are these segments so darn short? Well some of you smary pants might already have a gues or two but we'll get back to that later. All these pieces are getting grabbed as the stream continues. But how does it know where these crazy locations are at?
 
-Brings us back to the `.m3u8` request. Lets take a peak in one of these. Hey would you look at that, its just a plain text file. THis is actually pretty reasonable. We can see some cool metadata all prefixed with `EXT`. Fun fact, the well known rapper DMX claims that this was what motivated his hit single "EXT gon' give it to you" (not true). The most interesting part of this file is the latter half where we see a list of a bunch of links. Actually those links look a whole lot like the one we tracked to get that video segment earlier. And the number matches here roughly to the duration of the video. Neato! A quick wikipedia gets us something called `M3U` which is described as such:
+Brings us back to the `.m3u8` request. Lets take a peak in one of these. Hey would you look at that, its just a plain text file. THis is actually pretty reasonable. We can see some cool metadata all prefixed with `EXT`. Fun fact, the well known rapper DMX claims these files motivated his hit single "EXT gon' give it to you" (not true). The most interesting part of this file is the latter half where we see a list of a bunch of links. Actually those links look a whole lot like the one we tracked to get that video segment earlier. And the number matches here roughly to the duration of the video. Neato! A quick wikipedia gets us something called `M3U` which is described as such:
 
 > (MP3 URL[1][2] or Moving Picture Experts Group Audio Layer 3 Uniform Resource Locator[3] in full) is a computer file format for a multimedia playlist.
+
+Picture of a playlist and then again 5 seconds later, use figma to draw arrows to show where the same segment shows up.
 
 Cool so these files act as playlists of the video segments for the stream. But how does this static file update? Notice that And the playlist seems like its the same location and it changes every time you get it. So at any point it includes the most recent N segments. And than all a web player would need to do is to continue to fetch this playlist and stich the newest seegments in.
 
